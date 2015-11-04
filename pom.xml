@@ -10,9 +10,10 @@
     <module>echo-core</module>
     <module>echo-security</module>
     <module>echo-ui</module>
-    <module>echo-jpa</module>
-    <module>echo-mongodb</module>
-    <module>echo-solr</module>
+    <module>echo-data-common</module>
+    <module>echo-data-jpa</module>
+    <module>echo-data-mongodb</module>
+    <module>echo-data-solr</module>
     <module>echo-utils</module>
   </modules>
 
@@ -416,6 +417,12 @@
         <groupId>javax.inject</groupId>
         <artifactId>javax.inject</artifactId>
         <version>1</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.echo</groupId>
+        <artifactId>echo-data-common</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
       </dependency>
 
 
