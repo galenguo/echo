@@ -9,17 +9,20 @@ public interface Auditable<ID> extends Id<ID> {
 
     public String getCreatedBy();
 
-    public void setCreatedBy(String createdBy);
+    public void setCreatedBy(final String createdBy);
 
     public Date getCreationTime();
 
-    public void setCreateTime(Date createTime);
+    public void setCreationTime(final Date creationTime);
 
     public String getLastModifiedBy();
 
-    public void setLastModifiedBy(String lastModifiedBy);
+    public void setLastModifiedBy(final String lastModifiedBy);
 
     public Date getLastModificationTime();
 
-    public void setLastModificationTime(Date lastModificationTime);
+    public void setLastModificationTime(final Date lastModificationTime);
+
+    public boolean isNew();
+
 }
