@@ -8,7 +8,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>echo-data-solr</artifactId>
     <packaging>war</packaging>
-    <name>echo-data-solr</name>
+    <name>echo :: data :: solr</name>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>

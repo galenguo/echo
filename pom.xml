@@ -17,7 +17,7 @@
         <module>echo-utils</module>
     </modules>
 
-    <name>echo-parent</name>
+    <name>echo</name>
     <description>echo's dependence pom</description>
 
     <properties>
@@ -280,7 +280,7 @@
             <dependency>
                 <groupId>org.hibernate.javax.persistence</groupId>
                 <artifactId>hibernate-jpa-2.1-api</artifactId>
-                <version>${hibernate-jpa.verson}</version>
+                <version>${hibernate-jpa.version}</version>
             </dependency>
 
             <!-- <dependency>

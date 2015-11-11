@@ -10,7 +10,7 @@
     <artifactId>echo-ui</artifactId>
     <packaging>jar</packaging>
 
-    <name>echo-ui</name>
+    <name>echo :: ui</name>
     <url>http://maven.apache.org</url>
 
     <properties>

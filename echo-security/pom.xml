@@ -10,7 +10,7 @@
     <artifactId>echo-security</artifactId>
     <packaging>jar</packaging>
 
-    <name>echo-security</name>
+    <name>eche :: security</name>
 
     <dependencies>
         <dependency>

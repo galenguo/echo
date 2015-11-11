@@ -10,7 +10,7 @@
     <artifactId>echo-core</artifactId>
     <packaging>jar</packaging>
 
-    <name>echo-core</name>
+    <name>echo :: core</name>
     <url>http://maven.apache.org</url>
 
     <properties>

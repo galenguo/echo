@@ -10,7 +10,7 @@
     <artifactId>echo-data-jpa</artifactId>
     <packaging>jar</packaging>
 
-    <name>echo-data-jpa</name>
+    <name>echo :: data :: jpa</name>
     <url>http://maven.apache.org</url>
 
     <properties>
