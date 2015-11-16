@@ -3,6 +3,7 @@ package com.echo.jpa.repository;
 import com.echo.data.domain.Id;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import javax.persistence.EntityManager;
 import java.io.Serializable;
 
 /**
@@ -11,4 +12,5 @@ import java.io.Serializable;
  */
 public interface BaseJpaRepository<E extends Id<ID>, ID extends Serializable> extends JpaRepository<E, ID> {
 
+    public EntityManager getEntityManager();
 }

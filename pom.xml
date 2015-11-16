@@ -42,9 +42,9 @@
         <logback.version>1.1.2</logback.version>
 
 
-        <spring.version>4.1.5.RELEASE</spring.version>
-        <spring-data-jpa.version>1.7.2.RELEASE</spring-data-jpa.version>
-        <spring-data-mongo.version>1.6.2.RELEASE</spring-data-mongo.version>
+        <spring.version>4.2.2.RELEASE</spring.version>
+        <spring-data-jpa.version>1.9.0.RELEASE</spring-data-jpa.version>
+        <spring-data-mongo.version>1.8.0.RELEASE</spring-data-mongo.version>
         <spring-data-solr.version>1.3.2.RELEASE</spring-data-solr.version>
         <solr.version>5.0.0</solr.version>
         <hibernate.version>4.3.8.Final</hibernate.version>
@@ -226,6 +226,12 @@
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-mongodb</artifactId>
+                <version>${spring-data-mongo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-mongodb-cross-store</artifactId>
                 <version>${spring-data-mongo.version}</version>
             </dependency>
 
@@ -544,4 +550,150 @@
             </plugins>
         </pluginManagement>
     </build>
+
+    <repositories>
+
+        <repository>
+            <id>oschina Releases</id>
+            <name>oschina Releases</name>
+            <url>http://maven.oschina.net/content/groups/public</url>
+        </repository>
+
+        <repository>
+            <id>apache-repo</id>
+            <name>apache Repository</name>
+            <url>https://repository.apache.org/content/groups/public</url>
+        </repository>
+        <repository>
+            <id>java-repo</id>
+            <name>java Repository</name>
+            <url>http://download.java.net/maven/2</url>
+        </repository>
+        <repository>
+            <id>springsource-repo</id>
+            <name>SpringSource Repository</name>
+            <url>http://repo.spring.io/release</url>
+        </repository>
+        <repository>
+            <id>springsource-repo-snapshot</id>
+            <name>SpringSource Repository</name>
+            <url>http://repo.spring.io/snapshot</url>
+        </repository>
+        <repository>
+            <id>spring-milestone</id>
+            <name>Spring Maven MILESTONE Repository</name>
+            <url>http://repo.spring.io/libs-milestone</url>
+        </repository>
+        <repository>
+            <id>cloudhopper</id>
+            <name>Repository for Cloudhopper</name>
+            <url>http://maven.cloudhopper.com/repos/third-party</url>
+        </repository>
+        <repository>
+            <id>jboss-repo-releases</id>
+            <name>Jboss Repository</name>
+            <url>https://repository.jboss.org/nexus/content/repositories/releases</url>
+        </repository>
+        <repository>
+            <id>central</id>
+            <name>Maven Repository</name>
+            <layout>default</layout>
+            <url>http://repo.maven.apache.org/maven2</url>
+        </repository>
+        <repository>
+            <id>maven-repo1</id>
+            <name>maven-repo1</name>
+            <layout>default</layout>
+            <url>http://repo1.maven.org/maven2/</url>
+        </repository>
+        <repository>
+            <id>sourceforge-releases</id>
+            <name>Sourceforge Releases</name>
+            <url>https://oss.sonatype.org/content/repositories/sourceforge-releases</url>
+        </repository>
+
+    </repositories>
+
+    <pluginRepositories>
+
+        <pluginRepository>
+            <id>oschina Releases</id>
+            <name>oschina Releases</name>
+            <url>http://maven.oschina.net/content/groups/public</url>
+        </pluginRepository>
+
+        <pluginRepository>
+            <id>maven2-repo</id>
+            <name>maven2 Repository</name>
+            <url>http://repo1.maven.org/maven2/</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>Codehaus repository</id>
+            <url>http://repository.codehaus.org/</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>maven-db-plugin-repo</id>
+            <name>maven db plugin repository</name>
+            <url>https://maven-db-plugin.googlecode.com/svn/maven/repo</url>
+            <layout>default</layout>
+        </pluginRepository>
+
+    </pluginRepositories>
+
+    <!-- developer information -->
+    <developers>
+        <developer>
+            <name>Galen</name>
+            <email>galenguoecho@gmail.com</email>
+            <url>https://github.com/galenguo</url>
+            <roles>
+                <role>software engineer</role>
+            </roles>
+            <timezone>8</timezone>
+        </developer>
+    </developers>
+
+    <!-- license information -->
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <ciManagement>
+        <system>continuum</system>
+        <url>https://travis-ci.org/galenguo/echo</url>
+        <notifiers>
+            <notifier>
+                <type>mail</type>
+                <sendOnError>true</sendOnError>
+                <sendOnFailure>true</sendOnFailure>
+                <sendOnSuccess>true</sendOnSuccess>
+                <sendOnWarning>false</sendOnWarning>
+                <configuration>
+                    <address>galenguoecho@gmail.com</address>
+                </configuration>
+            </notifier>
+        </notifiers>
+    </ciManagement>
+
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com/galenguo/echo/issues</url>
+    </issueManagement>
+
+    <distributionManagement>
+        <site>
+            <id>local</id>
+            <name>filesystem</name>
+            <url>file:D:\EchoRepository\out</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>https://github.com/galenguo/echo</url>
+        <connection>scm:git:git://github.com/galenguo/echo.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:galenguo/echo.git</developerConnection>
+    </scm>
 </project>
