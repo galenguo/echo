@@ -10,11 +10,14 @@
         <module>echo-core</module>
         <module>echo-security</module>
         <module>echo-ui</module>
-        <module>echo-data-common</module>
+        <module>echo-data-commons</module>
         <module>echo-data-jpa</module>
         <module>echo-data-mongodb</module>
         <module>echo-data-solr</module>
         <module>echo-utils</module>
+        <module>echo-web-core-demo</module>
+        <module>echo-web-demo</module>
+        <module>echo-tags</module>
     </modules>
 
     <name>echo</name>
@@ -39,10 +42,10 @@
         <commons-fileupload.version>1.3.1</commons-fileupload.version>
         <commons-compress.version>1.9</commons-compress.version>
         <slf4j.version>1.7.10</slf4j.version>
-        <logback.version>1.1.2</logback.version>
-
+        <log4j.version>2.5</log4j.version>
 
         <spring.version>4.2.2.RELEASE</spring.version>
+        <spring-data-commons.version>1.11.0.RELEASE</spring-data-commons.version>
         <spring-data-jpa.version>1.9.0.RELEASE</spring-data-jpa.version>
         <spring-data-mongo.version>1.8.0.RELEASE</spring-data-mongo.version>
         <spring-data-solr.version>1.3.2.RELEASE</spring-data-solr.version>
@@ -52,9 +55,11 @@
         <hibernate-validator.version>5.1.3.Final</hibernate-validator.version>
         <shiro.version>1.2.3</shiro.version>
         <jcaptcha.version>1.0</jcaptcha.version>
-        <jackson.version>2.5.1</jackson.version>
+        <jackson.version>2.7.0</jackson.version>
         <fastjson.version>1.2.4</fastjson.version>
         <xmemcached.version>2.0.0</xmemcached.version>
+        <druid.version>1.0.16</druid.version>
+        <disruptor.version>3.3.4</disruptor.version>
     </properties>
 
     <dependencies>
@@ -136,9 +141,33 @@
         </dependency>
 
         <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>${logback.version}</version>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-web</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>${disruptor.version}</version>
         </dependency>
 
     </dependencies>
@@ -218,6 +247,12 @@
             <!-- spring data jpa dependences -->
             <dependency>
                 <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-commons</artifactId>
+                <version>${spring-data-commons.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-jpa</artifactId>
                 <version>${spring-data-jpa.version}</version>
             </dependency>
@@ -257,9 +292,9 @@
             <dependency>
                 <groupId>jdk.tools</groupId>
                 <artifactId>jdk.tools</artifactId>
-                <version>${jdk.version}</version>
+                <version>${jdkLevel}</version>
                 <scope>system</scope>
-                <systemPath>${java.home}/../lib/tools.jar</systemPath>
+                <systemPath>${env.JAVA_HOME}/lib/tools.jar</systemPath>
             </dependency>
 
             <!-- hibernate dependences -->
@@ -423,6 +458,13 @@
                 <version>${commons-compress.version}</version>
             </dependency>
 
+            <!-- druid -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
             <!-- other dependences -->
 
             <!-- @Inject -->
@@ -432,10 +474,18 @@
                 <version>1</version>
             </dependency>
 
+            <!-- log -->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-nosql</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+
+            <!-- echo data -->
             <dependency>
                 <groupId>com.echo</groupId>
                 <artifactId>echo-data-common</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>${project.version}</version>
             </dependency>
 
 

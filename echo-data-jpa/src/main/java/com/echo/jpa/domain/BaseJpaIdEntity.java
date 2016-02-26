@@ -7,23 +7,14 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * <p>base entity with auditable fields
- * <p>if use with oracle {@link BaseJpaOracleEntity}
+ * <p>base entity just with id field;
  * @author Galen
  * @since 2016/2/19
  */
 @MappedSuperclass
-public abstract class BaseJpaEntity<ID extends Serializable> extends Auditable<ID> {
+public abstract class BaseJpaIdEntity<ID extends Serializable> extends Auditable<ID> {
 
     protected ID id;
-
-    protected String createBy;
-
-    protected Date creationDate;
-
-    protected String lastModifiedBy;
-
-    protected Date lastModificationDate;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -36,41 +27,39 @@ public abstract class BaseJpaEntity<ID extends Serializable> extends Auditable<I
         this.id = id;
     }
 
-    @Column(name = "created_by")
+    @Transient
     public String getCreatedBy() {
-        return createBy;
+        return null;
     }
 
     public void setCreatedBy(String createdBy) {
-        this.createBy = createdBy;
+        throw new NoSuchMethodError();
     }
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "creation_date")
+    @Transient
     public Date getCreationDate() {
-        return creationDate;
+        throw new NoSuchMethodError();
     }
 
     public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
+        throw new NoSuchMethodError();
     }
 
-    @Column(name = "last_modified_by")
+    @Transient
     public String getLastModifiedBy() {
-        return lastModifiedBy;
+        throw new NoSuchMethodError();
     }
 
     public void setLastModifiedBy(String lastModifiedBy) {
-        this.lastModifiedBy = lastModifiedBy;
+        throw new NoSuchMethodError();
     }
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "last_modification_date")
+    @Transient
     public Date getLastModificationDate() {
-        return lastModificationDate;
+        throw new NoSuchMethodError();
     }
 
     public void setLastModificationDate(Date lastModificationDate) {
-        this.lastModificationDate = lastModificationDate;
+        throw new NoSuchMethodError();
     }
 }

@@ -16,7 +16,8 @@
 
         <dependency>
             <groupId>com.echo</groupId>
-            <artifactId>echo-data-common</artifactId>
+            <artifactId>echo-data-commons</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
         <dependency>

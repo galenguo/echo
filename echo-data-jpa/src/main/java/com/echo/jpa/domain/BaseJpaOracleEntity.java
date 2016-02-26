@@ -7,13 +7,13 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * <p>base entity with auditable fields
- * <p>if use with oracle {@link BaseJpaOracleEntity}
+ * <p>base entity ,can be use with oracle;
+ *
  * @author Galen
  * @since 2016/2/19
  */
 @MappedSuperclass
-public abstract class BaseJpaEntity<ID extends Serializable> extends Auditable<ID> {
+public abstract class BaseJpaOracleEntity<ID extends Serializable> extends Auditable<ID> {
 
     protected ID id;
 
@@ -26,7 +26,7 @@ public abstract class BaseJpaEntity<ID extends Serializable> extends Auditable<I
     protected Date lastModificationDate;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
     public ID getId() {
         return id;
