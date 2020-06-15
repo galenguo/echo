@@ -34,7 +34,7 @@
         <servlet-api.version>3.1.0</servlet-api.version>
         <junit.version>3.8.1</junit.version>
         <commons-lang3.version>3.3.2</commons-lang3.version>
-        <common-collections4.version>4.0</common-collections4.version>
+        <common-collections4.version>4.1</common-collections4.version>
         <guava.version>18.0</guava.version>
         <commons-io.version>2.4</commons-io.version>
         <commons-codec.version>1.10</commons-codec.version>
