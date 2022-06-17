@@ -56,7 +56,7 @@
         <shiro.version>1.2.3</shiro.version>
         <jcaptcha.version>1.0</jcaptcha.version>
         <jackson.version>2.7.0</jackson.version>
-        <fastjson.version>1.2.4</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <xmemcached.version>2.0.0</xmemcached.version>
         <druid.version>1.0.16</druid.version>
         <disruptor.version>3.3.4</disruptor.version>
